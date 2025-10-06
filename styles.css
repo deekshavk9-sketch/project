@@ -1,0 +1,290 @@
+/* ======== VCET ALUMNI NEXUS - STYLE SHEET ======== */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Root variables for theme */
+:root {
+  --primary: #0b63d6;
+  --secondary: #f0f6ff;
+  --text-dark: #222;
+  --text-light: #666;
+  --white: #fff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+/* Body and container */
+body {
+  background: var(--secondary);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+/* Navigation Menu */
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+}
+
+@media (max-width: 820px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  background: linear-gradient(to right, #0b63d6, #4da0ff);
+  color: var(--white);
+  padding: 3rem 1rem;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta .btn {
+  margin-right: 0.8rem;
+}
+
+.hero-image img {
+  width: 400px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  background: var(--white);
+  color: var(--primary);
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn.outline {
+  border: 2px solid var(--white);
+  background: transparent;
+  color: var(--white);
+}
+
+.btn.outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* ---------- CARD SECTIONS ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--white);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- EVENTS ---------- */
+.event-card {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+}
+
+.event-card h3 {
+  color: var(--primary);
+}
+
+/* ---------- MEMBERS ---------- */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.member-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+}
+
+.member-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- FORMS ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input,
+textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
